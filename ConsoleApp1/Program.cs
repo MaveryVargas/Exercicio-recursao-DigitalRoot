@@ -6,10 +6,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
-
-            Console.WriteLine(DigitalRoot(942));
-
+            CriarMenu();
         }
         public static double DigitalRoot(int n) //metodo recursivo, tem que um return
         {
@@ -28,9 +25,14 @@ namespace ConsoleApp1
                     soma = 0; // soma recebe zero e recomeça o processo ate que n = 0
                 }
             }
-
-
-           return soma; //retorna soma
+           return soma;  //retorna soma
+        }
+        public static void CriarMenu()
+        {
+            Console.WriteLine("Qual numero deseja utilizar");
+            int num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(DigitalRoot(num));           
+            CriarMenu();
         }
     }
 }
